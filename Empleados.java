@@ -16,9 +16,13 @@ public class Empleados {
     }
 
     public void aumentarSalario(double porcentaje) {
+
+        double aumento = (1 + porcentaje / 100);
+
+        
         for (Empleado empleado : lista) {
             if (empleado != null) {
-                double nuevoSalario = empleado.salario * (1 + porcentaje / 100);
+                double nuevoSalario = empleado.salario * aumento;
                 empleado.salario = nuevoSalario;
             }
         }
